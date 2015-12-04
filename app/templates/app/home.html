@@ -1,11 +1,12 @@
-{% load staticfiles %}
+{% load assets %}
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link href="{% static 'app/first.css' %}" type="text/css" rel="stylesheet">
-        <link href="{% static 'app/second.css' %}" type="text/css" rel="stylesheet">
+        {% assets "css_all" %}
+            <link href="{{ ASSET_URL }}" type="text/css" rel="stylesheet">
+        {% endassets %}
     </head>
     <body>
         <p>Assets test</p>
